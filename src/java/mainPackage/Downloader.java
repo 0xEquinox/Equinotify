@@ -1,5 +1,9 @@
 package mainPackage;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.io.PrintWriter;
 
 public class Downloader {
@@ -24,7 +28,7 @@ public class Downloader {
 	 		e.printStackTrace();
 		}
 	}
-	public void download_thumbnail() {
+	public void download_thumbnail() throws IOException {
 		String[] command =
 				{
 						"cmd",
@@ -36,13 +40,24 @@ public class Downloader {
 			new Thread(new SyncPipe(p.getInputStream(), System.out)).start();
 			PrintWriter stdin = new PrintWriter(p.getOutputStream());
 			stdin.println("cd \""+Constants.thumbnailDownloadPath+"\"");
-			stdin.println("youtube-dl --write-thumbnail -o \"%(song)s.%(ext)s\" "+ Constants.url);
-			stdin.println("del NA.mkv");
+			stdin.println("youtube-dl --write-thumbnail --skip-download -o \"%(song)s.%(ext)s\" "+ Constants.url);
 			stdin.close();
 			p.waitFor();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		BufferedImage img = null;
+		{
+			try {
+				img = ImageIO.read(new File(Constants.thumbnailDownloadPath + "\\" + "NA.webp"));
+				System.out.println("Trying to load Thumbnail");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+		assert img != null;
+		ImageIO.write(img, "png", new File(Constants.thumbnailDownloadPath + "\\" + "NA.png"));
 	}
 	
 }

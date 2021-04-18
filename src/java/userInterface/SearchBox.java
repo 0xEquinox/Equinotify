@@ -8,13 +8,14 @@ import java.io.IOException;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
-import javax.swing.JButton;
-import javax.swing.JTextField;
+import javax.swing.*;
 
 import mainPackage.Constants;
 import mainPackage.Downloader;
 import mainPackage.Player;
 import mainPackage.WebScrapper;
+
+import userInterface.Thumbnail;
 
 public class SearchBox implements ActionListener{
 
@@ -60,6 +61,7 @@ public class SearchBox implements ActionListener{
 
 			if(song.exists()) {
 				SongInfo.songInfo.setText(Constants.title);
+				ThumbnailSettings.setThumbnail();
 				Constants.scraperURL = "https://www.youtube.com/results?search_query=";
 				Constants.url = "https://www.youtube.com/watch?v=";
 
@@ -71,7 +73,11 @@ public class SearchBox implements ActionListener{
 			}else{	
 				Constants.scraperURL = "https://www.youtube.com/results?search_query=";
 				d.download_song();
-				d.download_thumbnail();
+				try {
+					d.download_thumbnail();
+				} catch (IOException ioException) {
+					ioException.printStackTrace();
+				}
 				Constants.url = "https://www.youtube.com/watch?v=";
 				SongInfo.songInfo.setText(Constants.title);
 				

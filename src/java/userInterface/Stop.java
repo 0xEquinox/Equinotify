@@ -22,6 +22,7 @@ public class Stop implements ActionListener{
 		if(e.getSource() == stopButton) {
 			SearchBox.player.clip.close();
 			SongInfo.songInfo.setText(null);
+			ThumbnailSettings.setThumbnailNull();
 		}
 		
 	}

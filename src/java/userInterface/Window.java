@@ -11,6 +11,7 @@ public class Window {
 	BottomPanel bottomPanel = new BottomPanel();
 	TopPanel topPanel = new TopPanel();
 	LeftPanel leftPanel = new LeftPanel();
+	MainPanel mainPanel = new MainPanel();
 	
 	public void drawWindow() {
 		f.setSize(Constants.windowWidth,Constants.windowHeight);
@@ -23,7 +24,7 @@ public class Window {
 	}
 	
 	public void drawPanels() {
-		
+		mainPanel.init();
 		bottomPanel.init();
 		topPanel.init();
 		leftPanel.init();

@@ -6,6 +6,7 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
 import userInterface.SongInfo;
+import userInterface.ThumbnailSettings;
 
 public class Controls {
 
@@ -53,6 +54,7 @@ public class Controls {
 		d.download_song();
 		Constants.url = "https://www.youtube.com/watch?v=";
 		SongInfo.songInfo.setText(Constants.title);
+		ThumbnailSettings.setThumbnail();
 		Constants.title = "";
 		player.music();
 	}

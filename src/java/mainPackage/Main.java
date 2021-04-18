@@ -14,7 +14,7 @@ public class Main {
 		start();
 	}
 	
-	public static void start() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+	public static void start() {
 		MakeFile mf = new MakeFile();
 		UI ui = new UI();
 		
