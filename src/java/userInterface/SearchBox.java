@@ -56,7 +56,7 @@ public class SearchBox implements ActionListener{
 				e1.printStackTrace();
 			}
 			
-			File song = new File(Constants.downloadPath + "\\" + Constants.title + ".wav");
+			File song = new File(Constants.songDownloadPath + "\\" + Constants.title + ".wav");
 
 			if(song.exists()) {
 				SongInfo.songInfo.setText(Constants.title);
@@ -71,6 +71,7 @@ public class SearchBox implements ActionListener{
 			}else{	
 				Constants.scraperURL = "https://www.youtube.com/results?search_query=";
 				d.download_song();
+				d.download_thumbnail();
 				Constants.url = "https://www.youtube.com/watch?v=";
 				SongInfo.songInfo.setText(Constants.title);
 				

@@ -13,10 +13,12 @@ public class MakeFile {
 	public void dirGen() {
 		  try {
 
-			    Path path = Paths.get(System.getenv("APPDATA")+"\\Equinoify\\songs");
+			    Path songsPath = Paths.get(System.getenv("APPDATA")+"\\Equinoify\\songs");
+			    Path thumbnailPath = Paths.get(System.getenv("APPDATA")+"\\Equinoify\\thumbnails");
 
 			    //java.nio.file.Files;
-			    Files.createDirectories(path);
+			    Files.createDirectories(songsPath);
+			    Files.createDirectories(thumbnailPath);
 
 			    System.out.println("Directory is created!");
 

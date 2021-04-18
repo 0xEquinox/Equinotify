@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class Constants {
 
-	public static String downloadPath = System.getenv("APPDATA")+"\\Equinoify\\songs";
+	public static String songDownloadPath = System.getenv("APPDATA")+"\\Equinoify\\songs";
+	public static String thumbnailDownloadPath = System.getenv("APPDATA")+"\\Equinoify\\thumbnails";
 	public static String url = "https://www.youtube.com/watch?v=";
 	public static String scraperURL = "https://www.youtube.com/results?search_query=";
 	public static String title = "";

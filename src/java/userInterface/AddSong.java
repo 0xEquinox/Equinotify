@@ -29,8 +29,8 @@ public class AddSong implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		Path songFile = Paths.get(Constants.downloadPath + "\\" + Constants.title + ".wav");
-		Path playlist = Paths.get(Constants.downloadPath + "\\..\\playlists");
+		Path songFile = Paths.get(Constants.songDownloadPath + "\\" + Constants.title + ".wav");
+		Path playlist = Paths.get(Constants.songDownloadPath + "\\..\\playlists");
 		
 		if(!Files.exists(playlist)) {
 			try {
@@ -40,7 +40,7 @@ public class AddSong implements ActionListener{
 			}
 		}
 		
-		File songFileCopy = new File(Constants.downloadPath + "\\..\\playlists\\" + Constants.title + ".wav");
+		File songFileCopy = new File(Constants.songDownloadPath + "\\..\\playlists\\" + Constants.title + ".wav");
 		
 		if(e.getSource() == addSong) {
 			
@@ -52,7 +52,7 @@ public class AddSong implements ActionListener{
 			}
 			
 			Constants.playlistSongTitles.add(Constants.title);
-			Constants.playlistSongPaths.add(Constants.downloadPath + "\\" + Constants.title + ".wav");
+			Constants.playlistSongPaths.add(Constants.songDownloadPath + "\\" + Constants.title + ".wav");
 			
 		}	
 	}

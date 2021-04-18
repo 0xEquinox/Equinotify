@@ -25,14 +25,17 @@ public class Player {
 			Constants.title = Constants.title.replace("\\", " ");
 		}
 		
-		Path songTitle = Paths.get(Constants.downloadPath + "\\" + Constants.title + ".wav");
-		Path renameMe = Paths.get(Constants.downloadPath + "\\NA.wav");
+		Path songTitle = Paths.get(Constants.songDownloadPath + "\\" + Constants.title + ".wav");
+		Path thumbnailTitle = Paths.get(Constants.thumbnailDownloadPath + "\\" + Constants.title + ".webp");
+		Path songRenameMe = Paths.get(Constants.songDownloadPath + "\\NA.wav");
+		Path thumbnailRenameMe = Paths.get(Constants.thumbnailDownloadPath + "\\NA.webp");
 
 		if(!songTitle.toFile().exists()) {
-			Files.move(renameMe, songTitle);
+			Files.move(songRenameMe, songTitle);
+			Files.move(thumbnailRenameMe, thumbnailTitle);
 		}
 		
-		File file = new File(Constants.downloadPath + "\\" + Constants.title + ".wav");
+		File file = new File(Constants.songDownloadPath + "\\" + Constants.title + ".wav");
 		
 		audioStream = AudioSystem.getAudioInputStream(file);
 		clip = AudioSystem.getClip();
