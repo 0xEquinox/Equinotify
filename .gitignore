@@ -1,0 +1,5 @@
+# IntelliJ IDEA
+/shelf/
+/.idea/workspace.xml
+*.iml
+/out/
