@@ -6,7 +6,7 @@ public class UI {
 	Pause p = new Pause();
 	
 	public void startGUI() {
-		win.drawWindow();		
+		win.drawWindow();
 	}
 	
 	

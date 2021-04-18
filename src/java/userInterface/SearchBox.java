@@ -30,9 +30,9 @@ public class SearchBox implements ActionListener{
 		
 		searchBox = new JTextField();
 		enterSearch = new JButton("Submit");
-		enterSearch.setBounds(80, 0, 80,25);
+		enterSearch.setBounds(Constants.windowWidth-100, 5, 80,25);
 		enterSearch.addActionListener(this);
-		searchBox.setSize(80, 25);
+		searchBox.setBounds(5, 5, Constants.windowWidth-105, 25);
 		searchBox.addActionListener(this);
 		TopPanel.topPanel.add(searchBox);
 		TopPanel.topPanel.add(enterSearch);

@@ -1,7 +1,6 @@
 package userInterface;
 
-import java.awt.Color;
-import java.awt.FlowLayout;
+import java.awt.*;
 
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;

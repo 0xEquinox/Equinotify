@@ -16,7 +16,7 @@ public class Window {
 		f.setSize(Constants.windowWidth,Constants.windowHeight);
 	    f.setTitle("Equinotify");
 	    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    f.setResizable(false);
+	    f.setResizable(true);
 	    f.setLayout(null);
 	    drawPanels();
 	    f.setVisible(true);
