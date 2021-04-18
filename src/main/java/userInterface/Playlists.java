@@ -6,8 +6,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JTable;
 
-import mainPackage.Constants;
-
 public class Playlists implements ActionListener{
 
 	JButton playlistButton;

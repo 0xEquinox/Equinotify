@@ -15,8 +15,6 @@ import mainPackage.Downloader;
 import mainPackage.Player;
 import mainPackage.WebScrapper;
 
-import userInterface.Thumbnail;
-
 public class SearchBox implements ActionListener{
 
 	JButton enterSearch;

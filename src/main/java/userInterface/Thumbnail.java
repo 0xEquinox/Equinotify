@@ -1,14 +1,9 @@
 package userInterface;
 
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 
 import mainPackage.Constants;
-
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
 public class Thumbnail {
 

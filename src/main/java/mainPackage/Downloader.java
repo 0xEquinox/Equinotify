@@ -46,18 +46,7 @@ public class Downloader {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		BufferedImage img = null;
-		{
-			try {
-				img = ImageIO.read(new File(Constants.thumbnailDownloadPath + "\\" + "NA.webp"));
-				System.out.println("Trying to load Thumbnail");
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-
-		assert img != null;
-		ImageIO.write(img, "png", new File(Constants.thumbnailDownloadPath + "\\" + "NA.png"));
+		ImageIO.write(ImageIO.read(new File(Constants.thumbnailDownloadPath + "\\" + "NA.webp")), "png", new File(Constants.thumbnailDownloadPath + "\\" + "NA.png"));
 	}
 	
 }
