@@ -3,6 +3,7 @@ package userInterface;
 import mainPackage.Constants;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Window {
 
@@ -16,6 +17,7 @@ public class Window {
 	public void drawWindow() {
 		f.setSize(Constants.windowWidth,Constants.windowHeight);
 	    f.setTitle("Equinotify");
+	    f.setIconImage(new ImageIcon(getClass().getResource("/images/Equinox.png")).getImage());
 	    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    f.setResizable(true);
 	    f.setLayout(null);

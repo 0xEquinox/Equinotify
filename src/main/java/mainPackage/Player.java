@@ -1,14 +1,15 @@
 package mainPackage;
 
 
-import userInterface.ThumbnailSettings;
-
 import javax.sound.sampled.*;
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
+import static userInterface.Thumbnail.thumbnailLabel;
 
 
 public class Player {
@@ -44,7 +45,7 @@ public class Player {
 		
 		File file = new File(Constants.songDownloadPath + "\\" + Constants.title + ".wav");
 
-		ThumbnailSettings.setThumbnail();
+		thumbnailLabel.setIcon((new ImageIcon(new ImageIcon(Constants.thumbnailDownloadPath + "//" + Constants.title + ".png").getImage().getScaledInstance(Constants.windowWidth-110, Constants.windowHeight-150, java.awt.Image.SCALE_SMOOTH))));
 
 		audioStream = AudioSystem.getAudioInputStream(file);
 		clip = AudioSystem.getClip();

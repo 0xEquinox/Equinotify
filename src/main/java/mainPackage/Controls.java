@@ -1,12 +1,14 @@
 package mainPackage;
 
 import userInterface.SongInfo;
-import userInterface.ThumbnailSettings;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.swing.*;
 import java.io.IOException;
 import java.util.Scanner;
+
+import static userInterface.Thumbnail.thumbnailLabel;
 
 public class Controls {
 
@@ -54,7 +56,7 @@ public class Controls {
 		d.download_song();
 		Constants.url = "https://www.youtube.com/watch?v=";
 		SongInfo.songInfo.setText(Constants.title);
-		ThumbnailSettings.setThumbnail();
+		thumbnailLabel.setIcon((new ImageIcon(new ImageIcon(Constants.thumbnailDownloadPath + "//" + Constants.title + ".png").getImage().getScaledInstance(Constants.windowWidth-110, Constants.windowHeight-150, java.awt.Image.SCALE_SMOOTH))));
 		Constants.title = "";
 		player.music();
 	}

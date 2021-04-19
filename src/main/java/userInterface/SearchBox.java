@@ -13,6 +13,8 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
+import static userInterface.Thumbnail.thumbnailLabel;
+
 public class SearchBox implements ActionListener{
 
 	JButton enterSearch;
@@ -57,7 +59,7 @@ public class SearchBox implements ActionListener{
 
 			if(song.exists()) {
 				SongInfo.songInfo.setText(Constants.title);
-				ThumbnailSettings.setThumbnail();
+				thumbnailLabel.setIcon((new ImageIcon(new ImageIcon(Constants.thumbnailDownloadPath + "//" + Constants.title + ".png").getImage().getScaledInstance(Constants.windowWidth-110, Constants.windowHeight-150, java.awt.Image.SCALE_SMOOTH))));
 				Constants.scraperURL = "https://www.youtube.com/results?search_query=";
 				Constants.url = "https://www.youtube.com/watch?v=";
 
