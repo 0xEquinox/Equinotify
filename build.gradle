@@ -9,8 +9,12 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id 'java'
+    id 'java-library'
+    id 'idea'
 }
 
+version = '0.1.0'
 sourceCompatibility = JavaVersion.VERSION_15
 targetCompatibility = JavaVersion.VERSION_15
 
@@ -22,11 +26,11 @@ repositories {
 }
 
 dependencies {
-    // Use JUnit test framework.
-    implementation name: 'jsoup-1.13.1'
+    // Jsoup.
+    implementation group: 'org.jsoup', name: 'jsoup-1.13.1'
 
-    // This dependency is used by the application.
-    implementation name: 'webp-imageio-core-0.1.3'
+    // Webp extension for ImageIO
+    implementation group: 'com.luciad.webp', name: 'webp-imageio-core-0.1.3'
 }
 
 application {
@@ -42,11 +46,15 @@ java {
 }
 
 jar {
-    from("LICENSE") {
-        rename { "${it}_${project.archivesBaseName}"}
-    }
     manifest {
-        attributes('Main-Class': 'mainPackage.Main')
-        attributes('Class-Path': 'libs/*')
+        attributes "Main-Class": 'mainPackage.Main'
+    }
+
+    from {
+// filters only existing and non-empty dirs
+        sourceSets.main.runtimeClasspath
+                .filter { (it.isDirectory() && it.listFiles().length > 0) || it.isFile() }
+                .collect { it.isDirectory() ? it : zipTree(it) }
+
     }
 }

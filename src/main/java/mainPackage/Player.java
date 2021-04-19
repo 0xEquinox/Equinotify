@@ -33,10 +33,13 @@ public class Player {
 			Files.move(thumbnailRenameMe, thumbnailTitle);
 			try {
 				Files.delete(songRenameMe);
+			}catch (IOException ignored) {} try {
 				Files.delete(Paths.get(Constants.thumbnailDownloadPath + "\\NA.jpg"));
+			}catch (IOException ignored) {} try {
 				Files.delete(Paths.get(Constants.thumbnailDownloadPath + "\\NA.webp"));
+			}catch (IOException ignored) {} try {
 				Files.delete(Paths.get(Constants.thumbnailDownloadPath + "\\NA.png"));
-			} catch (IOException ignored) {}
+			}catch (IOException ignored) {}
 		}
 		
 		File file = new File(Constants.songDownloadPath + "\\" + Constants.title + ".wav");
