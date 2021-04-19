@@ -31,7 +31,7 @@ public class SearchBox implements ActionListener{
 		enterSearch = new JButton("Submit");
 		enterSearch.setBounds(Constants.windowWidth-100, 5, 80,25);
 		enterSearch.addActionListener(this);
-		searchBox.setBounds(5, 5, Constants.windowWidth-105, 25);
+		searchBox.setBounds(5, 5, TopPanel.topPanelWidth-enterSearch.getWidth()-25, 25);
 		searchBox.addActionListener(this);
 		TopPanel.topPanel.add(searchBox);
 		TopPanel.topPanel.add(enterSearch);
@@ -45,7 +45,7 @@ public class SearchBox implements ActionListener{
 		
 		if(e.getSource().equals(enterSearch) || e.getSource().equals(searchBox)){
 			
-			if(firstSong == false) {
+			if(!firstSong) {
 				player.clip.close();
 			}firstSong = false;
 			
@@ -67,7 +67,7 @@ public class SearchBox implements ActionListener{
 
 			if(song.exists()) {
 				SongInfo.songInfo.setText(Constants.title);
-				thumbnailLabel.setIcon((new ImageIcon(new ImageIcon(Constants.thumbnailDownloadPath + "//" + Constants.title + ".png").getImage().getScaledInstance(Constants.windowWidth-110, Constants.windowHeight-150, java.awt.Image.SCALE_SMOOTH))));
+				thumbnailLabel.setIcon((new ImageIcon(new ImageIcon(Constants.thumbnailDownloadPath + "//" + Constants.title + ".png").getImage().getScaledInstance(MainPanel.mainPanelWidth, MainPanel.mainPanelHeight, java.awt.Image.SCALE_SMOOTH))));
 				Constants.scraperURL = "https://www.youtube.com/results?search_query=";
 				Constants.url = "https://www.youtube.com/watch?v=";
 
@@ -89,11 +89,7 @@ public class SearchBox implements ActionListener{
 				
 				try {
 					player.music();
-				} catch (UnsupportedAudioFileException e1) {
-					e1.printStackTrace();
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				} catch (LineUnavailableException e1) {
+				} catch (UnsupportedAudioFileException | IOException | LineUnavailableException e1) {
 					e1.printStackTrace();
 				}
 				pause.isPaused = false;
@@ -104,7 +100,7 @@ public class SearchBox implements ActionListener{
 	public void isUrl() throws IOException {
 		if(searchBox.getText().contains("https")) {
 			Constants.url = searchBox.getText();
-		}else {
+		} else {
 			Constants.scraperURL = Constants.scraperURL + searchBox.getText();
 			scraper.findID();
 			scraper.findSongName();

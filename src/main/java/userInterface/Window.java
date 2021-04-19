@@ -26,10 +26,10 @@ public class Window {
 	}
 	
 	public void drawPanels() {
-		mainPanel.init();
 		bottomPanel.init();
 		topPanel.init();
 		leftPanel.init();
+		mainPanel.init();
 	}
 	
 }

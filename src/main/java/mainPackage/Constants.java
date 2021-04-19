@@ -13,7 +13,7 @@ public class Constants {
 	public static ArrayList<String> playlistSongTitles = new ArrayList<String>();
 	public static ArrayList<String> playlistSongPaths = new ArrayList<String>();
 
-	public static int windowWidth = 850;
+	public static int windowWidth = 1000;
 	public static int windowHeight = 850;
 
 }

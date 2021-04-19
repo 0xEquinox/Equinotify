@@ -1,6 +1,8 @@
 package mainPackage;
 
 
+import userInterface.MainPanel;
+
 import javax.sound.sampled.*;
 import javax.swing.*;
 import java.io.File;
@@ -19,6 +21,10 @@ public class Player {
 	
 	public void music() throws UnsupportedAudioFileException, IOException, LineUnavailableException{
 
+		if(Constants.title.contains("\\") || Constants.title.contains("|")) {
+			Constants.title = Constants.title.replace("\\", " ");
+			Constants.title = Constants.title.replace("|", " ");
+		}
 		Path songTitle = Paths.get(Constants.songDownloadPath + "\\" + Constants.title + ".wav");
 		Path thumbnailTitle = Paths.get(Constants.thumbnailDownloadPath + "\\" + Constants.title + ".png");
 		Path songRenameMe = Paths.get(Constants.songDownloadPath + "\\NA.wav");
@@ -40,7 +46,7 @@ public class Player {
 		
 		File file = new File(Constants.songDownloadPath + "\\" + Constants.title + ".wav");
 
-		thumbnailLabel.setIcon((new ImageIcon(new ImageIcon(Constants.thumbnailDownloadPath + "//" + Constants.title + ".png").getImage().getScaledInstance(Constants.windowWidth-110, Constants.windowHeight-150, java.awt.Image.SCALE_SMOOTH))));
+		thumbnailLabel.setIcon((new ImageIcon(new ImageIcon(Constants.thumbnailDownloadPath + "//" + Constants.title + ".png").getImage().getScaledInstance(MainPanel.mainPanelWidth, MainPanel.mainPanelHeight, java.awt.Image.SCALE_SMOOTH))));
 
 		audioStream = AudioSystem.getAudioInputStream(file);
 		clip = AudioSystem.getClip();
