@@ -1,6 +1,7 @@
 # IntelliJ IDEA
 /shelf/
 /.idea/
+Equinotify.iml
 *.iml
 /out/
 
