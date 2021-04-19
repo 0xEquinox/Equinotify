@@ -13,8 +13,8 @@ public class MakeFile {
 	public void dirGen() {
 		  try {
 
-			    Path songsPath = Paths.get(System.getenv("APPDATA")+"\\Equinoify\\songs");
-			    Path thumbnailPath = Paths.get(System.getenv("APPDATA")+"\\Equinoify\\thumbnails");
+			    Path songsPath = Paths.get(System.getenv("APPDATA")+"\\Equinotify\\songs");
+			    Path thumbnailPath = Paths.get(System.getenv("APPDATA")+"\\Equinotify\\thumbnails");
 
 			    //java.nio.file.Files;
 			    Files.createDirectories(songsPath);
@@ -30,7 +30,7 @@ public class MakeFile {
 	}
 	
 	public void removeDir() {
-		File song = new File(System.getenv("APPDATA")+"\\Equinoify\\songs\\NA.wav");
+		File song = new File(System.getenv("APPDATA")+"\\Equinotify\\songs\\NA.wav");
 	    if (song.delete()) { 
 	      System.out.println("Deleted the file: " + song.getName());
 	    } else {

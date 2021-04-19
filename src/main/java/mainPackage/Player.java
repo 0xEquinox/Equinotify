@@ -18,12 +18,7 @@ public class Player {
 	public AudioInputStream audioStream;
 	
 	public void music() throws UnsupportedAudioFileException, IOException, LineUnavailableException{
-		
-		if(Constants.title.contains("\\") || Constants.title.contains("|")) {
-			Constants.title = Constants.title.replace("\\", " ");
-			Constants.title = Constants.title.replace("|", " ");
-		}
-		
+
 		Path songTitle = Paths.get(Constants.songDownloadPath + "\\" + Constants.title + ".wav");
 		Path thumbnailTitle = Paths.get(Constants.thumbnailDownloadPath + "\\" + Constants.title + ".png");
 		Path songRenameMe = Paths.get(Constants.songDownloadPath + "\\NA.wav");

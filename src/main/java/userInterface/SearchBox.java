@@ -54,8 +54,16 @@ public class SearchBox implements ActionListener{
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
-			
-			File song = new File(Constants.songDownloadPath + "\\" + Constants.title + ".wav");
+
+			String checkTitle = Constants.title;
+
+			if(checkTitle.contains("\\") || checkTitle.contains("|")) {
+				checkTitle = checkTitle.replace("\\", " ");
+				checkTitle = checkTitle.replace("|", " ");
+			}
+
+			File song = new File(Constants.songDownloadPath + "\\" + checkTitle + ".wav");
+
 
 			if(song.exists()) {
 				SongInfo.songInfo.setText(Constants.title);
