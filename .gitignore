@@ -1,0 +1,12 @@
+# IntelliJ IDEA
+/shelf/
+/.idea/
+Equinotify.iml
+*.iml
+/out/
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+/build/
