@@ -1,8 +1,8 @@
 package userInterface;
 
-import javax.swing.JFrame;
-
 import mainPackage.Constants;
+
+import javax.swing.*;
 
 public class Window {
 

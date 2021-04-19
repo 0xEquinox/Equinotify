@@ -1,11 +1,10 @@
 package mainPackage;
 
-import java.io.IOException;
+import userInterface.UI;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
-
-import userInterface.UI;
+import java.io.IOException;
 
 public class Main {
 

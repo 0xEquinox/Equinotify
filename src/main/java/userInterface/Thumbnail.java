@@ -1,9 +1,9 @@
 package userInterface;
 
 
-import javax.swing.*;
-
 import mainPackage.Constants;
+
+import javax.swing.*;
 
 public class Thumbnail {
 

@@ -4,7 +4,6 @@ import mainPackage.Constants;
 
 import javax.swing.*;
 
-
 import static userInterface.Thumbnail.thumbnailLabel;
 
 public class ThumbnailSettings {

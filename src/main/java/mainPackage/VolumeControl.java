@@ -1,9 +1,9 @@
 package mainPackage;
 
+import userInterface.SearchBox;
+
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
-
-import userInterface.SearchBox;
 
 public class VolumeControl {
 

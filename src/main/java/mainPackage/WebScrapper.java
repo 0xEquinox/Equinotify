@@ -1,7 +1,8 @@
 package mainPackage;
 
-import java.io.IOException;
 import org.jsoup.Jsoup;
+
+import java.io.IOException;
 
 public class WebScrapper {
 

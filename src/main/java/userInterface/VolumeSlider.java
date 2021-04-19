@@ -1,11 +1,11 @@
 package userInterface;
 
 
-import javax.swing.JSlider;
+import mainPackage.VolumeControl;
+
+import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-
-import mainPackage.VolumeControl;
 
 public class VolumeSlider implements ChangeListener{
 

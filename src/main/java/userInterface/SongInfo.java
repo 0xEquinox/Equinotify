@@ -1,9 +1,9 @@
 package userInterface;
 
 
-import javax.swing.JLabel;
-
 import mainPackage.Constants;
+
+import javax.swing.*;
 
 
 public class SongInfo {

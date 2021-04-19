@@ -1,10 +1,11 @@
 package mainPackage;
 
 import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class Downloader {
 
@@ -46,7 +47,15 @@ public class Downloader {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		ImageIO.write(ImageIO.read(new File(Constants.thumbnailDownloadPath + "\\" + "NA.webp")), "png", new File(Constants.thumbnailDownloadPath + "\\" + "NA.png"));
+		String thumbnailType;
+		if (Files.exists(Paths.get(Constants.thumbnailDownloadPath + "\\" + "NA.jpg"))){
+			thumbnailType = "jpg";
+		}else if (Files.exists(Paths.get(Constants.thumbnailDownloadPath + "\\" + "NA.webp"))) {
+			thumbnailType = "webp";
+		}else {
+			thumbnailType = null;
+		}
+		ImageIO.write(ImageIO.read(new File(Constants.thumbnailDownloadPath + "\\" + "NA." + thumbnailType)), "png", new File(Constants.thumbnailDownloadPath + "\\" + "NA.png"));
 	}
 	
 }
