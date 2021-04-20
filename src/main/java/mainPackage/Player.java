@@ -2,8 +2,6 @@ package mainPackage;
 
 
 import userInterface.MainPanel;
-import userInterface.Thumbnail;
-
 import javax.sound.sampled.*;
 import javax.swing.*;
 import java.io.File;

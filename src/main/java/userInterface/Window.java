@@ -1,20 +1,12 @@
 package userInterface;
 
 import mainPackage.Constants;
-import mainPackage.Main;
-
 import javax.swing.*;
 
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
-import java.awt.image.BufferedImage;
-
-import static userInterface.BottomPanel.*;
 import static userInterface.Thumbnail.currentThumbnail;
 import static userInterface.Thumbnail.thumbnailLabel;
-import static userInterface.TopPanel.*;
-import static userInterface.LeftPanel.*;
-import static userInterface.MainPanel.*;
 
 public class Window {
 
