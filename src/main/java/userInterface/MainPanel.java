@@ -20,7 +20,7 @@ public class MainPanel {
         mainPanel.setBorder(BorderFactory.createLineBorder(Color.black));
         mainPanel.setBounds(mainPanelX, mainPanelY, mainPanelWidth, mainPanelHeight);
         mainPanel.setLayout(null);
-        addComponents();
+        //addComponents();
         Window.f.add(mainPanel);
     }
 

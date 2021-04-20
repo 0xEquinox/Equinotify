@@ -1,6 +1,7 @@
 package userInterface;
 
 import mainPackage.Constants;
+import mainPackage.Main;
 
 import javax.swing.*;
 
@@ -31,13 +32,8 @@ public class Window {
 	    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    f.setResizable(true);
 	    f.setLayout(null);
-	    //f.pack();
 	    drawPanels();
-		System.err.println(Window.f.getWidth()-LeftPanel.leftPanelWidth);
-		System.err.println(Window.f.getWidth());
-		System.err.println(mainPanelWidth);
 		f.setVisible(true);
-
 		f.addComponentListener(new ComponentAdapter() {
 			public void componentResized(ComponentEvent componentEvent) {
 				f.setSize(f.getWidth(),f.getHeight());
@@ -57,10 +53,12 @@ public class Window {
 
 	public void redrawPanels() {
 		BottomPanel.bottomPanel.setBounds(0, f.getHeight()-100, f.getWidth(), 61);
-		TopPanel.topPanel.setBounds(0, 0, f.getWidth(), 50);
-		LeftPanel.leftPanel.setBounds(0, 50, 200, f.getHeight()-150);
-		MainPanel.mainPanel.setBounds(200, 50, f.getWidth()-200, f.getHeight()-150);
-		thumbnailLabel.setSize(f.getWidth()-200, f.getHeight()-150);
+		TopPanel.topPanel.setBounds(0, 0, f.getWidth(), 35);
+		LeftPanel.leftPanel.setBounds(0, 34, 200, f.getHeight()-133);
+		MainPanel.mainPanel.setBounds(199, 33, f.getWidth()-200, f.getHeight()-132);
+		SearchBox.searchBox.setSize(f.getWidth()-105, 25);
+		SearchBox.enterSearch.setBounds(f.getWidth()-100, 5, 80,25);
+		thumbnailLabel.setSize(MainPanel.mainPanel.getWidth(), MainPanel.mainPanel.getHeight());
 		thumbnailLabel.setIcon((new ImageIcon(currentThumbnail.getImage().getScaledInstance(MainPanel.mainPanel.getWidth(), MainPanel.mainPanel.getHeight(), java.awt.Image.SCALE_SMOOTH))));;
 	}
 }

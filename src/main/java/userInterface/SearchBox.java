@@ -18,8 +18,8 @@ import static userInterface.Thumbnail.thumbnailLabel;
 
 public class SearchBox implements ActionListener{
 
-	JButton enterSearch;
-	JTextField searchBox;
+	public static JButton enterSearch;
+	public static JTextField searchBox;
 	WebScrapper scraper = new WebScrapper();
 	Downloader d = new Downloader();
 	public static Player player = new Player();
@@ -27,7 +27,6 @@ public class SearchBox implements ActionListener{
 	boolean firstSong = true;
 
 	public void addSearch() {
-		
 		searchBox = new JTextField();
 		enterSearch = new JButton("Submit");
 		enterSearch.setBounds(Constants.windowWidth-100, 5, 80,25);
