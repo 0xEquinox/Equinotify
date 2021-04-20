@@ -66,7 +66,7 @@ public class SearchBox implements ActionListener{
 
 
 			if(song.exists()) {
-				SongInfo.songInfo.setText(Constants.title);
+				SongName.songInfo.setText(Constants.title);
 				currentThumbnail.setImage(new ImageIcon(Constants.thumbnailDownloadPath + "//" + Constants.title + ".png").getImage());
 				thumbnailLabel.setIcon((new ImageIcon(currentThumbnail.getImage().getScaledInstance(MainPanel.mainPanel.getWidth(), MainPanel.mainPanel.getHeight(), java.awt.Image.SCALE_SMOOTH))));
 				Constants.scraperURL = "https://www.youtube.com/results?search_query=";
@@ -86,8 +86,8 @@ public class SearchBox implements ActionListener{
 					ioException.printStackTrace();
 				}
 				Constants.url = "https://www.youtube.com/watch?v=";
-				SongInfo.songInfo.setText(Constants.title);
-				
+				SongName.songInfo.setText(Constants.title);
+
 				try {
 					player.music();
 				} catch (UnsupportedAudioFileException | IOException | LineUnavailableException e1) {

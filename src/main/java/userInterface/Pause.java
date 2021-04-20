@@ -8,10 +8,10 @@ import java.awt.event.ActionListener;
 
 public class Pause implements ActionListener{
 	
-	JButton pause;
+	public static JButton pause;
 	int framePos;
 	
-	boolean isPaused = false;
+	public static boolean isPaused = false;
 	
 	public void addButton() {
 		
@@ -23,12 +23,12 @@ public class Pause implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent p) {
 
-		if(p.getSource() == pause && isPaused == false && SearchBox.player.clip != null) {
+		if(p.getSource() == pause && !isPaused && SearchBox.player.clip != null) {
 			SearchBox.player.clip.stop();
 			framePos = SearchBox.player.clip.getFramePosition();
 			pause.setText("Play");
 			isPaused = true;
-		}else if(p.getSource() == pause && isPaused == true && SearchBox.player.clip != null) {
+		}else if(p.getSource() == pause && isPaused && SearchBox.player.clip != null) {
 			SearchBox.player.clip.setFramePosition(framePos);
 			SearchBox.player.clip.start();
 			pause.setText("Pause");

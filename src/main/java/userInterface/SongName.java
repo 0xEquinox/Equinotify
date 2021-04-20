@@ -6,7 +6,7 @@ import mainPackage.Constants;
 import javax.swing.*;
 
 
-public class SongInfo {
+public class SongName {
 
 	public static JLabel songInfo = new JLabel(Constants.title);
 

@@ -13,10 +13,11 @@ public class BottomPanel {
 	public static Integer bottomPanelHeight = 500;
 	public static JPanel bottomPanel = new JPanel();
 	Pause pauseButton = new Pause();
-	public SongInfo songInfo = new SongInfo();
+	public SongName songName = new SongName();
 	AddSong addSong = new AddSong();
 	Stop stopButton = new Stop();
 	VolumeSlider volSlider = new VolumeSlider();
+	SongLength songLength = new SongLength();
 
 	public void init() {
 		bottomPanel.setBackground(Color.white);
@@ -31,9 +32,10 @@ public class BottomPanel {
 		
 		stopButton.addButton();
 		pauseButton.addButton();
-		songInfo.displayInfo();
+		songName.displayInfo();
 		addSong.addSongButton();
 		volSlider.drawSlider();
+		songLength.displayLength();
 	}
 	
 }

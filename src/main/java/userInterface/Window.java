@@ -51,6 +51,6 @@ public class Window {
 		SearchBox.searchBox.setSize(f.getWidth()-105, 25);
 		SearchBox.enterSearch.setBounds(f.getWidth()-100, 5, 80,25);
 		thumbnailLabel.setSize(MainPanel.mainPanel.getWidth(), MainPanel.mainPanel.getHeight());
-		thumbnailLabel.setIcon((new ImageIcon(currentThumbnail.getImage().getScaledInstance(MainPanel.mainPanel.getWidth(), MainPanel.mainPanel.getHeight(), java.awt.Image.SCALE_SMOOTH))));;
+		thumbnailLabel.setIcon((new ImageIcon(currentThumbnail.getImage().getScaledInstance(MainPanel.mainPanel.getWidth(), MainPanel.mainPanel.getHeight(), java.awt.Image.SCALE_SMOOTH))));
 	}
 }

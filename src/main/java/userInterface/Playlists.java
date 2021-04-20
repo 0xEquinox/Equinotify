@@ -20,7 +20,7 @@ public class Playlists implements ActionListener{
 	
 	public void actionPerformed(ActionEvent e) {
 		
-		String catagories = "Song Name";
+		String categories = "Song Name";
 		
 		if(e.getSource() == playlistButton) {
 			
