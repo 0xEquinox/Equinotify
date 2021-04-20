@@ -12,6 +12,7 @@ plugins {
     id 'java'
     id 'java-library'
     id 'idea'
+    id 'maven-publish'
 }
 
 version = '0.1.2'
