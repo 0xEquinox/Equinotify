@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
+import static userInterface.Thumbnail.currentThumbnail;
 import static userInterface.Thumbnail.thumbnailLabel;
 
 public class SearchBox implements ActionListener{
@@ -67,7 +68,8 @@ public class SearchBox implements ActionListener{
 
 			if(song.exists()) {
 				SongInfo.songInfo.setText(Constants.title);
-				thumbnailLabel.setIcon((new ImageIcon(new ImageIcon(Constants.thumbnailDownloadPath + "//" + Constants.title + ".png").getImage().getScaledInstance(MainPanel.mainPanelWidth, MainPanel.mainPanelHeight, java.awt.Image.SCALE_SMOOTH))));
+				currentThumbnail.setImage(new ImageIcon(Constants.thumbnailDownloadPath + "//" + Constants.title + ".png").getImage());
+				thumbnailLabel.setIcon((new ImageIcon(currentThumbnail.getImage().getScaledInstance(MainPanel.mainPanel.getWidth(), MainPanel.mainPanel.getHeight(), java.awt.Image.SCALE_SMOOTH))));
 				Constants.scraperURL = "https://www.youtube.com/results?search_query=";
 				Constants.url = "https://www.youtube.com/watch?v=";
 

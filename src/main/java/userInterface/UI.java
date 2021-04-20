@@ -8,9 +8,5 @@ public class UI {
 	public void startGUI() {
 		win.drawWindow();
 	}
-	
-	
-	
-	
-	
+
 }

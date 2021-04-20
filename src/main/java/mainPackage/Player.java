@@ -2,6 +2,7 @@ package mainPackage;
 
 
 import userInterface.MainPanel;
+import userInterface.Thumbnail;
 
 import javax.sound.sampled.*;
 import javax.swing.*;
@@ -11,7 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import static userInterface.Thumbnail.thumbnailLabel;
+import static userInterface.Thumbnail.*;
 
 
 public class Player {
@@ -46,7 +47,8 @@ public class Player {
 		
 		File file = new File(Constants.songDownloadPath + "\\" + Constants.title + ".wav");
 
-		thumbnailLabel.setIcon((new ImageIcon(new ImageIcon(Constants.thumbnailDownloadPath + "//" + Constants.title + ".png").getImage().getScaledInstance(MainPanel.mainPanelWidth, MainPanel.mainPanelHeight, java.awt.Image.SCALE_SMOOTH))));
+		currentThumbnail.setImage(new ImageIcon(Constants.thumbnailDownloadPath + "//" + Constants.title + ".png").getImage());
+		thumbnailLabel.setIcon((new ImageIcon(currentThumbnail.getImage().getScaledInstance(MainPanel.mainPanel.getWidth(), MainPanel.mainPanel.getHeight(), java.awt.Image.SCALE_SMOOTH))));
 
 		audioStream = AudioSystem.getAudioInputStream(file);
 		clip = AudioSystem.getClip();

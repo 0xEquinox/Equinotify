@@ -10,7 +10,7 @@ public class BottomPanel {
 	public static Integer bottomPanelX = 0;
 	public static Integer bottomPanelY = Constants.windowHeight - 100;
 	public static Integer bottomPanelWidth = Constants.windowWidth;
-	public static Integer bottomPanelHeight = 100;
+	public static Integer bottomPanelHeight = 500;
 	public static JPanel bottomPanel = new JPanel();
 	Pause pauseButton = new Pause();
 	public SongInfo songInfo = new SongInfo();

@@ -9,8 +9,8 @@ public class MainPanel {
 
     public static Integer mainPanelX = LeftPanel.leftPanelWidth;
     public static Integer mainPanelY = TopPanel.topPanelHeight;
-    public static Integer mainPanelWidth = Constants.windowWidth-LeftPanel.leftPanelWidth;
-    public static Integer mainPanelHeight = (Constants.windowHeight-TopPanel.topPanelHeight)-BottomPanel.bottomPanelHeight;
+    public static Integer mainPanelWidth = Constants.windowWidth-200;
+    public static Integer mainPanelHeight = (Constants.windowHeight -TopPanel.topPanelHeight)-BottomPanel.bottomPanelHeight;
     public static JPanel mainPanel = new JPanel();
     public static Thumbnail thumbnail = new Thumbnail();
 
@@ -27,6 +27,5 @@ public class MainPanel {
     public void addComponents() {
         thumbnail.displayThumbnail();
     }
-
 }
 
