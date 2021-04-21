@@ -20,8 +20,8 @@ public class Stop implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
-		if(e.getSource() == stopButton) {
+
+		if (e.getSource() == stopButton) {
 			SearchBox.player.clip.close();
 			SongName.songInfo.setText(null);
 			currentThumbnail.setImage(new ImageIcon(Thumbnail.class.getResource("/images/Equinox.png")).getImage());
@@ -29,8 +29,9 @@ public class Stop implements ActionListener{
 			SongLength.songLocation.setText("00:00");
 			SongLength.songLength.setText("00:00");
 		}
-		
+
 	}
+
 	
 	
 }
