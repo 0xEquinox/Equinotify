@@ -25,7 +25,7 @@ public class Stop implements ActionListener{
 			SearchBox.player.clip.close();
 			SongName.songInfo.setText(null);
 			currentThumbnail.setImage(new ImageIcon(Thumbnail.class.getResource("/images/Equinox.png")).getImage());
-			thumbnailLabel.setIcon((new ImageIcon(currentThumbnail.getImage().getScaledInstance(MainPanel.mainPanel.getWidth(), MainPanel.mainPanel.getHeight(), java.awt.Image.SCALE_SMOOTH))));
+			thumbnailLabel.setIcon((new ImageIcon(currentThumbnail.getImage().getScaledInstance(MainPanel.mainPanel.getWidth()-1, MainPanel.mainPanel.getHeight()-1, java.awt.Image.SCALE_SMOOTH))));
 			SongLength.songLocation.setText("00:00");
 			SongLength.songLength.setText("00:00");
 		}

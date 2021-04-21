@@ -68,7 +68,7 @@ public class SearchBox implements ActionListener{
 			if(song.exists()) {
 				SongName.songInfo.setText(Constants.title);
 				currentThumbnail.setImage(new ImageIcon(Constants.thumbnailDownloadPath + "//" + Constants.title + ".png").getImage());
-				thumbnailLabel.setIcon((new ImageIcon(currentThumbnail.getImage().getScaledInstance(MainPanel.mainPanel.getWidth(), MainPanel.mainPanel.getHeight(), java.awt.Image.SCALE_SMOOTH))));
+				thumbnailLabel.setIcon((new ImageIcon(currentThumbnail.getImage().getScaledInstance(MainPanel.mainPanel.getWidth()-1, MainPanel.mainPanel.getHeight()-1, java.awt.Image.SCALE_SMOOTH))));
 				Constants.scraperURL = "https://www.youtube.com/results?search_query=";
 				Constants.url = "https://www.youtube.com/watch?v=";
 

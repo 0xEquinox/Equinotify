@@ -66,7 +66,7 @@ public class Player implements LineListener{
 		File file = new File(Constants.songDownloadPath + "\\" + Constants.title + ".wav");
 
 		currentThumbnail.setImage(new ImageIcon(Constants.thumbnailDownloadPath + "//" + Constants.title + ".png").getImage());
-		thumbnailLabel.setIcon((new ImageIcon(currentThumbnail.getImage().getScaledInstance(MainPanel.mainPanel.getWidth(), MainPanel.mainPanel.getHeight(), java.awt.Image.SCALE_SMOOTH))));
+		thumbnailLabel.setIcon((new ImageIcon(currentThumbnail.getImage().getScaledInstance(MainPanel.mainPanel.getWidth()-1, MainPanel.mainPanel.getHeight()-1, java.awt.Image.SCALE_SMOOTH))));
 
 		audioStream = AudioSystem.getAudioInputStream(file);
 		clip = AudioSystem.getClip();
