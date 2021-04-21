@@ -29,7 +29,7 @@ repositories {
 
 dependencies {
     // Webp extension for ImageIO
-    implementation group: 'org.sejda.webp-imageio', name: 'webp-imageio-sejda-0.1.0'
+    implementation group: 'org.sejda.webp-imageio', name: 'webp-imageio-0.1.7-SNAPSHOT'
     // Jsoup.
     implementation group: 'org.jsoup', name: 'jsoup-1.13.1'
 }

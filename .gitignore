@@ -10,3 +10,5 @@ Equinotify.iml
 
 # Ignore Gradle build output directory
 /build/
+/.vs/slnx.sqlite
+/.vs
